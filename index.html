@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Катя</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/vara@1.4.0/lib/vara.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      var fontSize = 72;
+      if (window.screen.width < 700) fontSize = 32;
+      else if (window.screen.width < 1200) fontSize = 56;
+      var vara = new Vara(
+        "#container",
+        "https://cdn.jsdelivr.net/npm/vara@1.4.0/fonts/Satisfy/SatisfySL.json",
+        [
+          {
+            text: "I love you",
+            y: 150,
+            fromCurrentPosition: { y: false },
+            duration: 3000,
+          },
+        ],
+        {
+          strokeWidth: 2,
+          color: "white",
+          fontSize: fontSize,
+          textAlign: "center",
+        }
+      );
+      vara.ready(function () {
+        var erase = true;
+        vara.animationEnd(function (i, o) {
+          if (i == "no_erase") erase = false;
+          if (erase) {
+            o.container.style.transition = "opacity 1s 1s";
+            o.container.style.opacity = 0;
+          }
+        });
+        vara.get("github").container.style.cursor = "pointer";
+        vara.get("github").container.onclick = function () {
+          document.querySelector("#link").click();
+        };
+      });
+    </script>
+  </body>
+</html>

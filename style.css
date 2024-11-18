@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url(bg.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+
+#container {
+  width: 80%;
+  margin: 20px auto;
+  min-height: 700px;
+  margin-top: 150px;
+}
+#container svg {
+  min-height: 700px;
+}
