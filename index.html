@@ -37,13 +37,6 @@
       );
       vara.ready(function () {
         var erase = true;
-        vara.animationEnd(function (i, o) {
-          if (i == "no_erase") erase = false;
-          if (erase) {
-            o.container.style.transition = "opacity 1s 1s";
-            o.container.style.opacity = 0;
-          }
-        });
         vara.get("github").container.style.cursor = "pointer";
         vara.get("github").container.onclick = function () {
           document.querySelector("#link").click();
